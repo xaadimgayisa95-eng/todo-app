@@ -3,52 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تسجيل معلم</title>
+<title>أنا معلم</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Tahoma,sans-serif;
-background:#eef8f8;
+}
+
+body{
+background:#eef7f5;
+padding:20px;
 }
 
 .container{
-max-width:500px;
-margin:30px auto;
+max-width:600px;
+margin:auto;
 background:white;
 padding:25px;
 border-radius:20px;
-box-shadow:0 0 15px rgba(0,0,0,.1);
+box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
 h1{
-color:#0d7b73;
 text-align:center;
+color:#0b7a6d;
+margin-bottom:20px;
 }
 
 input,select,textarea{
 width:100%;
 padding:14px;
-margin:10px 0;
-border:2px solid #0d7b73;
+margin-top:12px;
+border:2px solid #0b7a6d;
 border-radius:12px;
 font-size:16px;
-box-sizing:border-box;
 }
 
 button{
 width:100%;
-padding:15px;
+padding:16px;
+margin-top:20px;
+background:#0b7a6d;
+color:white;
 border:none;
 border-radius:12px;
-background:#0d7b73;
-color:white;
 font-size:18px;
 cursor:pointer;
 }
 
 button:hover{
-background:#095f59;
+background:#095f55;
+}
+
+.success{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#d7fff1;
+color:#006b50;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
 }
 </style>
 
@@ -58,26 +76,36 @@ background:#095f59;
 
 <div class="container">
 
-<h1>📖 تسجيل معلم</h1>
+<h1>🧑‍🏫 تسجيل معلم قرآن</h1>
 
-<input type="text" placeholder="الاسم الكامل">
+<input id="name" placeholder="الاسم الكامل">
 
-<input type="text" placeholder="الدولة">
+<input id="country" placeholder="الدولة">
 
-<input type="text" placeholder="المدينة">
+<input id="city" placeholder="المدينة">
 
-<select>
-<option>طريقة التدريس</option>
-<option>حضوري</option>
-<option>عن بعد</option>
-<option>الاثنان</option>
+<input id="phone" placeholder="رقم واتساب">
+
+<select id="gender">
+<option>ذكر</option>
+<option>أنثى</option>
 </select>
 
-<textarea placeholder="نبذة عنك"></textarea>
+<select id="method">
+<option>حضوري</option>
+<option>عن بعد</option>
+<option>حضوري وعن بعد</option>
+</select>
+
+<textarea id="about" rows="5" placeholder="نبذة عنك"></textarea>
 
 <button onclick="saveTeacher()">
-حفظ البيانات
+تسجيل المعلم
 </button>
+
+<div class="success" id="msg">
+✅ تم تسجيل البيانات (تجريبياً)
+</div>
 
 </div>
 
@@ -85,7 +113,7 @@ background:#095f59;
 
 function saveTeacher(){
 
-alert("سيتم حفظ البيانات في قاعدة البيانات لاحقًا.");
+document.getElementById("msg").style.display="block";
 
 }
 
