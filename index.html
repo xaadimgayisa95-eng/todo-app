@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروعي الأول</title>
+    <title>تطبيق المهام</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,15 +13,23 @@
 
     <div class="container">
 
-        <h1>👋 السلام عليكم</h1>
+        <h1>📝 تطبيق المهام</h1>
 
-        <p>هذا أول مشروع أبنيه مع ChatGPT.</p>
+        <p>أضف مهامك اليومية بسهولة.</p>
 
-        <button onclick="sayHello()">
-            اضغط هنا
-        </button>
+        <div class="input-box">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="اكتب مهمة جديدة...">
+            <button onclick="addTask()">
+                إضافة
+            </button>
+        </div>
 
-        <div id="time"></div>
+        <ul id="taskList">
+
+        </ul>
 
     </div>
 
