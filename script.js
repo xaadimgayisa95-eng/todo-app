@@ -1,41 +1,11 @@
-function addTask() {
-    const input = document.getElementById("taskInput");
-    const text = input.value.trim();
+document.getElementById("teacherBtn").addEventListener("click", function () {
+    alert("👨‍🏫 قريبًا ستتمكن من تسجيل نفسك كمعلم قرآن.");
+});
 
-    if (text === "") {
-        alert("اكتب مهمة أولاً.");
-        return;
-    }
+document.getElementById("studentBtn").addEventListener("click", function () {
+    alert("🎓 قريبًا ستتمكن من البحث عن معلم قرآن مناسب.");
+});
 
-    const list = document.getElementById("taskList");
-
-    const li = document.createElement("li");
-
-    const span = document.createElement("span");
-    span.innerText = text;
-
-    span.onclick = function () {
-        if (span.style.textDecoration === "line-through") {
-            span.style.textDecoration = "none";
-            span.style.color = "black";
-        } else {
-            span.style.textDecoration = "line-through";
-            span.style.color = "gray";
-        }
-    };
-
-    const del = document.createElement("button");
-    del.innerText = "حذف";
-    del.className = "delete-btn";
-
-    del.onclick = function () {
-        li.remove();
-    };
-
-    li.appendChild(span);
-    li.appendChild(del);
-
-    list.appendChild(li);
-
-    input.value = "";
-}
+document.getElementById("aboutBtn").addEventListener("click", function () {
+    alert("📖 منصة معلمي القرآن الكريم تربط بين المعلمين والطلاب حول العالم.");
+});
