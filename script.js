@@ -1,9 +1,11 @@
-
-
-document.getElementById("teacherBtn").addEventListener("click", function () {
-    window.location.href = "teacher.html";
+document.querySelectorAll(".item").forEach((item) => {
+    item.addEventListener("click", () => {
+        alert("🚀 قريبًا ستفتح هذه الفئة.");
+    });
 });
 
-document.getElementById("aboutBtn").addEventListener("click", function () {
-    alert("📖 منصة معلمي القرآن الكريم تربط بين المعلمين والطلاب حول العالم.");
+document.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("click", () => {
+        alert("📖 سيتم فتح صفحة المعلم قريبًا.");
+    });
 });
