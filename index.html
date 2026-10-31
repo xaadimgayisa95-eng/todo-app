@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#126b4f">
+  <meta name="description" content="SenDaara — trouvez des écoles coraniques et des daaras au Sénégal.">
+  <title>SenDaara — Les daaras du Sénégal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/sendaara-mark.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SenDaara accueil">
+        <img src="assets/sendaara-mark.svg" alt="" class="brand-mark">
+        <span class="brand-copy"><strong>Sen<span>Daara</span></strong><small>Le savoir, nos racines.</small></span>
+      </a>
+      <div class="top-actions">
+        <button class="language-button" id="languageToggle" type="button" aria-label="Changer la langue">عربي</button>
+        <button class="profile-button" type="button" aria-label="Profil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"/></svg></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-pattern" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">AU CŒUR DU SÉNÉGAL</span></div>
+          <h1 data-i18n="heroTitle">Le savoir commence<br><em>au Daara.</em></h1>
+          <p data-i18n="heroText">Découvrez les daaras et écoles coraniques près de chez vous. Le lien entre les familles, les enseignants et le savoir.</p>
+          <a class="hero-link" href="#search"><span data-i18n="explore">Explorer les daaras</span><span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-seal" aria-hidden="true">
+          <div class="seal-inner"><span class="seal-star">✳</span><span class="seal-arabic">اقرأ</span><span class="seal-line"></span><span class="seal-caption">SAVOIR · FOI · AVENIR</span></div>
+        </div>
+        <div class="hero-bottom"><span>14 RÉGIONS</span><span class="hero-bottom-line"></span><span>UN HÉRITAGE VIVANT</span></div>
+      </section>
+
+      <section class="search-section" id="search">
+        <div class="section-heading">
+          <div><span class="section-kicker" data-i18n="findKicker">VOTRE RECHERCHE</span><h2 data-i18n="findTitle">Trouver un daara</h2></div>
+          <span class="heading-icon" aria-hidden="true">⌕</span>
+        </div>
+        <form class="search-card" id="searchForm">
+          <label class="search-field"><span class="field-icon" aria-hidden="true">⌕</span><span class="field-body"><span data-i18n="searchLabel">Nom du daara ou enseignant</span><input id="searchInput" type="search" placeholder="Ex. Daara Serigne..." data-i18n-placeholder="searchPlaceholder"></span></label>
+          <label class="search-field"><span class="field-icon pin" aria-hidden="true">⌖</span><span class="field-body"><span data-i18n="regionLabel">Région</span><select id="regionSelect"><option value="" data-i18n="allRegions">Toutes les régions</option><option>Dakar</option><option>Thiès</option><option>Diourbel</option><option>Saint-Louis</option><option>Kaolack</option><option>Louga</option><option>Ziguinchor</option><option>Fatick</option><option>Kolda</option><option>Tambacounda</option><option>Kaffrine</option><option>Matam</option><option>Sédhiou</option><option>Kédougou</option></select></span><span class="select-chevron">⌄</span></label>
+          <button class="search-submit" type="submit"><span data-i18n="searchButton">Rechercher</span><span aria-hidden="true">→</span></button>
+        </form>
+        <div class="quick-tags"><span data-i18n="popular">Populaire :</span><button type="button" data-query="Dakar">Dakar</button><button type="button" data-query="Thiès">Thiès</button><button type="button" data-query="École coranique">Écoles coraniques</button></div>
+      </section>
+
+      <section class="categories-section">
+        <div class="section-heading compact"><div><span class="section-kicker" data-i18n="discoverKicker">DÉCOUVRIR</span><h2 data-i18n="discoverTitle">Explorez par besoin</h2></div></div>
+        <div class="category-grid">
+          <button class="category-card" type="button" data-category="daara"><span class="category-icon green">⌂</span><span class="category-title" data-i18n="cat1">Daaras</span><span class="category-desc" data-i18n="cat1desc">Apprentissage du Coran</span><span class="category-arrow">↗</span></button>
+          <button class="category-card" type="button" data-category="school"><span class="category-icon sand">▤</span><span class="category-title" data-i18n="cat2">Écoles coraniques</span><span class="category-desc" data-i18n="cat2desc">Établissements & madrasas</span><span class="category-arrow">↗</span></button>
+          <button class="category-card" type="button" data-category="teacher"><span class="category-icon blue">♙</span><span class="category-title" data-i18n="cat3">Enseignants</span><span class="category-desc" data-i18n="cat3desc">Trouver un enseignant</span><span class="category-arrow">↗</span></button>
+          <button class="category-card" type="button" data-category="support"><span class="category-icon gold">♡</span><span class="category-title" data-i18n="cat4">Soutenir un daara</span><span class="category-desc" data-i18n="cat4desc">Contribuer à sa mission</span><span class="category-arrow">↗</span></button>
+        </div>
+      </section>
+
+      <section class="results-section" id="results">
+        <div class="results-heading"><div><span class="section-kicker" data-i18n="nearKicker">À DÉCOUVRIR</span><h2 data-i18n="nearTitle">Les daaras en vedette</h2></div><span class="soon-badge" data-i18n="previewBadge">APERÇU</span></div>
+        <div class="empty-state"><div class="empty-symbol">✳</div><h3 data-i18n="emptyTitle">Votre communauté commence ici</h3><p data-i18n="emptyText">Les profils des daaras et enseignants apparaîtront ici dès que le répertoire sera connecté. Pour le moment, nous préparons un espace clair et fiable pour tous.</p><button type="button" class="outline-button" id="notifyButton" data-i18n="notifyButton">Être informé du lancement <span>→</span></button><p class="notice" id="notice" role="status" aria-live="polite"></p></div>
+      </section>
+
+      <section class="join-banner"><div class="join-mark" aria-hidden="true">✳</div><div><span class="section-kicker" data-i18n="joinKicker">ENSEMBLE POUR LE SAVOIR</span><h2 data-i18n="joinTitle">Vous représentez un daara ?</h2><p data-i18n="joinText">Préparez-vous à présenter votre établissement aux familles du Sénégal.</p></div><button type="button" id="joinButton" aria-label="En savoir plus">↗</button></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navigation principale">
+      <a class="nav-item active" href="#"><span class="nav-icon">⌂</span><span data-i18n="navHome">Accueil</span></a>
+      <a class="nav-item" href="#search"><span class="nav-icon">⌕</span><span data-i18n="navSearch">Recherche</span></a>
+      <a class="nav-item" href="#results"><span class="nav-icon">▤</span><span data-i18n="navDaaras">Les daaras</span></a>
+      <button class="nav-item" type="button" id="navProfile"><span class="nav-icon">♙</span><span data-i18n="navProfile">Profil</span></button>
+    </nav>
+    <footer class="footer"><span>© 2026 SenDaara</span><span data-i18n="footer">Pensé au Sénégal, pour le Sénégal.</span></footer>
+  </div>
+</body>
+</html>
