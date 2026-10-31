@@ -42,10 +42,19 @@ document.querySelectorAll("[data-query]").forEach((button) => {
   });
 });
 document.querySelectorAll("[data-category]").forEach((button) => {
+  button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
+    document.querySelectorAll("[data-category]").forEach((card) => {
+      card.classList.remove("is-selected");
+      card.setAttribute("aria-pressed", "false");
+    });
+    button.classList.add("is-selected");
+    button.setAttribute("aria-pressed", "true");
     const categoryNames = {daara:"Daaras",school:"Écoles coraniques",teacher:"Enseignants",support:"Soutenir un daara"};
     const categoryNamesAr = {daara:"المحاظر",school:"المدارس القرآنية",teacher:"المعلمون",support:"دعم المحاظر"};
-    $("#notice").textContent = language === "fr" ? categoryNames[button.dataset.category] + " : cette rubrique sera activée lors de la prochaine étape." : categoryNamesAr[button.dataset.category] + " : سيتم تفعيل هذا القسم في المرحلة القادمة.";
+    $("#notice").textContent = language === "fr"
+      ? categoryNames[button.dataset.category] + " sélectionné. Cette rubrique sera activée dès la connexion du répertoire."
+      : "تم اختيار " + categoryNamesAr[button.dataset.category] + ". سيتم تفعيل هذا القسم عند ربط الدليل.";
     $("#results").scrollIntoView({behavior:"smooth",block:"start"});
   });
 });
@@ -56,3 +65,4 @@ function showComingSoon() {
 $("#notifyButton").addEventListener("click", showComingSoon);
 $("#joinButton").addEventListener("click", showComingSoon);
 $("#navProfile").addEventListener("click", showComingSoon);
+$("#profileTop").addEventListener("click", showComingSoon);
