@@ -6,7 +6,7 @@ const translations = {
     eyebrow:"في قلب السنغال",heroTitle:'العلم يبدأ<br><em>في الدار.</em>',heroText:"اكتشف المحاظر والمدارس القرآنية القريبة منك. منصة تجمع الأسر والمعلمين وطلاب العلم.",explore:"اكتشف المحاظر",findKicker:"ابدأ البحث",findTitle:"ابحث عن محظرة",searchLabel:"اسم المحظرة أو المعلم",searchPlaceholder:"مثال: محظرة الشيخ...",regionLabel:"المنطقة",allRegions:"جميع المناطق",searchButton:"بحث",popular:"الأكثر بحثًا:",discoverKicker:"اكتشف",discoverTitle:"تصفح حسب حاجتك",cat1:"المحاظر",cat1desc:"تعليم القرآن الكريم",cat2:"المدارس القرآنية",cat2desc:"المدارس والمعاهد",cat3:"المعلمون",cat3desc:"ابحث عن معلم",cat4:"ادعم محظرة",cat4desc:"ساهم في رسالتها",nearKicker:"اكتشف",nearTitle:"محاظر مميزة",previewBadge:"معاينة",emptyTitle:"مجتمعك يبدأ من هنا",emptyText:"ستظهر ملفات المحاظر والمعلمين هنا بعد ربط دليل المدارس. نعمل الآن على إعداد مساحة واضحة وموثوقة للجميع.",notifyButton:"أخبرني عند الإطلاق",joinKicker:"معًا من أجل العلم",joinTitle:"هل تمثل محظرة؟",joinText:"استعد لتعريف الأسر في السنغال بمؤسستك.",navHome:"الرئيسية",navSearch:"بحث",navDaaras:"المحاظر",navProfile:"الملف الشخصي",footer:"صُنع في السنغال، من أجل السنغال."
   }
 };
-let language = "fr";
+let language = "ar";
 const $ = (selector) => document.querySelector(selector);
 function setLanguage(next) {
   language = next;
