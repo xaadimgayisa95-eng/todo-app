@@ -68,6 +68,31 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{min-height:100dvh}.shel
 .mobile-bottom-nav .nav-item.active .nav-icon svg path{stroke-linejoin:round}
 .mobile-bottom-nav .nav-item.active .nav-icon{background:#204632;border-radius:12px;width:38px;height:31px}
 .mobile-bottom-nav .nav-item.active{color:#83d5ab}
+
+/* Sunu Daara dashboard: four summary cards and four-plus service cards */
+.stats{gap:12px;margin-bottom:25px}
+.stat{position:relative;overflow:hidden;padding:16px 15px 17px;min-height:126px;border-radius:22px;border-color:#294233;background:linear-gradient(145deg,#1b3023 0%,#122018 100%);box-shadow:0 8px 22px #00000012;transition:transform .18s,border-color .18s}
+.stat:after{content:"";position:absolute;left:-22px;bottom:-32px;width:88px;height:88px;border:1px solid #ffffff0a;border-radius:50%;pointer-events:none}
+.stat-icon{width:42px;height:42px;border-radius:15px;margin-bottom:12px;background:linear-gradient(145deg,#1b7951,#15553a);color:#a9f0c4}
+.stat:nth-child(2) .stat-icon{background:linear-gradient(145deg,#286da8,#1c486d);color:#b8e0ff}
+.stat:nth-child(3) .stat-icon{background:linear-gradient(145deg,#a16c1c,#67461b);color:#ffe29a}
+.stat:nth-child(4) .stat-icon{background:linear-gradient(145deg,#7654ba,#473275);color:#e0d0ff}
+.stat strong{font-size:27px;line-height:1.15;position:relative;z-index:1}
+.stat p{font-size:11px;line-height:1.65;margin-top:7px;position:relative;z-index:1}
+.actions{gap:11px;margin-bottom:24px}
+.action{position:relative;overflow:hidden;min-height:86px;padding:13px;border-radius:20px;background:linear-gradient(145deg,#18291f,#132018);border-color:#2b4032;box-shadow:0 7px 18px #00000010;transition:transform .18s,border-color .18s,background .18s}
+.action:hover,.action:focus-visible{border-color:#4e7e5d;background:linear-gradient(145deg,#1d3526,#15251b)}
+.action-icon{width:44px;height:44px;border-radius:15px;background:linear-gradient(145deg,#197b52,#15583c);color:#aaf0c6}
+.action:nth-child(2) .action-icon{background:linear-gradient(145deg,#347fc0,#205b91);color:#c6e6ff}
+.action:nth-child(3) .action-icon{background:linear-gradient(145deg,#bc8127,#7e541b);color:#ffe19a}
+.action:nth-child(4) .action-icon{background:linear-gradient(145deg,#8060c7,#503b85);color:#e4d6ff}
+.action:nth-child(5) .action-icon{background:linear-gradient(145deg,#228e8b,#176261);color:#b9f4ed}
+.action:nth-child(6) .action-icon{background:linear-gradient(145deg,#a64c47,#6c302d);color:#ffd0c9}
+.action-icon svg,.stat-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}
+.action strong{font-size:12px;line-height:1.7}
+.action small{font-size:10px;line-height:1.7}
+.panel{border-radius:23px;border-color:#2a4032;background:linear-gradient(160deg,#14241a,#101b14);padding:16px}
+@media(max-width:380px){.stats{gap:9px}.stat{min-height:116px;padding:13px;border-radius:19px}.stat-icon{width:38px;height:38px}.action{min-height:80px;padding:10px 8px}.action-icon{width:37px;height:37px;border-radius:13px}.action strong{font-size:11px}.action small{font-size:9px}}
 </style></head>
 <body><div class="shell">
 <header class="topbar"><a class="back" href="index.html" aria-label="العودة للرئيسية">→</a><div class="brand"><small>سونو دارا · مساحة إدارة آمنة</small><h1 id="topDaaraName">إدارة الدار</h1></div><span class="status-pill" id="connectionBadge">جارٍ الاتصال</span></header>
