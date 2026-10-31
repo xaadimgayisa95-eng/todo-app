@@ -58,6 +58,7 @@ document.querySelectorAll("[data-query]").forEach((button) => {
 document.querySelectorAll("[data-category]").forEach((button) => {
   button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
+    if (button.dataset.category === "daara") { window.location.href = "daara-admin.html"; return; }
     document.querySelectorAll("[data-category]").forEach((card) => {
       card.classList.remove("is-selected");
       card.setAttribute("aria-pressed", "false");
