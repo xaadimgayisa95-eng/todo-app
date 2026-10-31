@@ -84,3 +84,26 @@ body{background:#0d1511;color:#f4f7f3;font-family:"Noto Sans Arabic","DM Sans",s
 
 
 .app-toast{position:fixed;z-index:100;bottom:96px;left:50%;transform:translate(-50%,12px);width:max-content;max-width:calc(100vw - 36px);padding:13px 17px;border:1px solid #395543;border-radius:15px;background:#20372a;color:#f2f8f3;font:500 12px/1.8 "Noto Sans Arabic","DM Sans",sans-serif;box-shadow:0 12px 35px #0005;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;text-align:center}.app-toast.is-visible{opacity:1;transform:translate(-50%,0)}
+
+
+/* SenDaara visual identity — colorful open cards, touch-first mobile rhythm */
+:root{--sd-mint:#7ed0a8;--sd-green:#0b6a4d;--sd-blue:#286db4;--sd-purple:#6d49bd;--sd-orange:#bd6908;--sd-gold:#d7b348}
+.app-shell{background:#0d1711}
+.mobile-topbar{background:rgba(13,23,17,.96);backdrop-filter:blur(18px)}
+.app-welcome{background:linear-gradient(118deg,#183e2c 0%,#285743 58%,#315e49 100%);border-radius:0 0 25px 25px;padding:23px 20px 25px;position:relative;overflow:hidden}
+.app-welcome:after{content:"";position:absolute;width:180px;height:180px;border:1px solid #ffffff12;border-radius:50%;left:-65px;bottom:-110px;pointer-events:none}
+.welcome-kicker{color:#c0e9d0}.welcome-copy h1{color:#fff}.welcome-copy p{color:#d4e6da}.welcome-logo{box-shadow:0 10px 26px #06170e45;border:1px solid #ffffff38}
+.notification-button{background:#163326;border-color:#ffffff20;color:#dff4e6}
+.mobile-search{box-shadow:0 8px 24px #0002;border-color:#31463a;background:#16251c}
+.search-submit{background:linear-gradient(135deg,#8bd9b0,#68c49a);box-shadow:0 4px 12px #4eae7c22}
+.shortcut{transition:transform .18s ease,background .18s ease}.shortcut:active{transform:scale(.96)}
+.shortcut-icon{box-shadow:0 8px 18px #0002;border-radius:22px}
+.shortcut-green{background:linear-gradient(145deg,#0a7654,#07553f)}.shortcut-blue{background:linear-gradient(145deg,#347ec2,#205c9c)}.shortcut-orange{background:linear-gradient(145deg,#d47a16,#a95305)}.shortcut-purple{background:linear-gradient(145deg,#8057ce,#5c3aa5)}
+.showcase-heading h2{font-size:clamp(17px,4.5vw,21px);font-weight:800}.showcase-heading p{line-height:1.7}
+.place-card{background:#16251c;border:1px solid #2b4033;box-shadow:0 9px 24px #0002;transition:transform .18s ease,border-color .18s ease}.place-card:active{transform:scale(.985);border-color:#548166}
+.place-art,.teacher-art{border-radius:18px}.place-tags span{border-radius:99px;background:#203b2c;color:#91d6ae}
+.place-rating{color:#e7c66b;font-weight:800}
+.support-banner{background:linear-gradient(115deg,#244d36,#162b20);border-color:#385b43}.support-art{background:linear-gradient(135deg,#f5d984,#dcb74e);box-shadow:0 5px 15px #0002}
+.mobile-bottom-nav{background:rgba(20,35,26,.97);border-top-color:#2b4033}
+.mobile-bottom-nav .nav-item.active{background:linear-gradient(180deg,#1b3b2a,#142b1f);color:#83d5ab}
+@media(max-width:390px){.app-welcome{padding:21px 16px 23px}.shortcut-icon{box-shadow:0 6px 14px #0002}.place-card{flex-basis:225px}}
