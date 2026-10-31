@@ -28,13 +28,27 @@ $("#languageToggle").addEventListener("click", () => setLanguage(language === "f
 $("#searchForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const query = $("#searchInput").value.trim();
-  const region = $("#regionSelect").value;
-  const msg = language === "fr"
-    ? "Le répertoire sera disponible après la connexion des données. " + (query ? "Recherche préparée : " + query + ". " : "") + (region ? "Région : " + region + "." : "")
-    : "سيصبح الدليل متاحًا بعد ربط قاعدة البيانات. " + (query ? "عبارة البحث: " + query + ". " : "") + (region ? "المنطقة: " + region + "." : "");
-  $("#notice").textContent = msg;
-  $("#results").scrollIntoView({behavior:"smooth",block:"start"});
+  const region = $("#regionSelect") ? $("#regionSelect").value : "";
+  const message = language === "fr"
+    ? "Recherche préparée : " + (query || "tous les profils") + (region ? " · Région : " + region : "") + ". Le répertoire sera connecté dans une prochaine étape."
+    : "تم تجهيز البحث: " + (query || "جميع الملفات") + (region ? " · المنطقة: " + region : "") + ". سيتم ربط دليل البيانات في مرحلة لاحقة.";
+  showAppMessage(message);
 });
+function showAppMessage(message) {
+  let toast = $("#appToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "appToast";
+    toast.className = "app-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add("is-visible");
+  window.clearTimeout(window.__senDaaraToastTimer);
+  window.__senDaaraToastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 3200);
+}
 document.querySelectorAll("[data-query]").forEach((button) => {
   button.addEventListener("click", () => {
     $("#searchInput").value = button.dataset.query;
@@ -50,19 +64,23 @@ document.querySelectorAll("[data-category]").forEach((button) => {
     });
     button.classList.add("is-selected");
     button.setAttribute("aria-pressed", "true");
-    const categoryNames = {daara:"Daaras",school:"Écoles coraniques",teacher:"Enseignants",support:"Soutenir un daara"};
-    const categoryNamesAr = {daara:"المحاظر",school:"المدارس القرآنية",teacher:"المعلمون",support:"دعم المحاظر"};
-    $("#notice").textContent = language === "fr"
-      ? categoryNames[button.dataset.category] + " sélectionné. Cette rubrique sera activée dès la connexion du répertoire."
-      : "تم اختيار " + categoryNamesAr[button.dataset.category] + ". سيتم تفعيل هذا القسم عند ربط الدليل.";
-    $("#results").scrollIntoView({behavior:"smooth",block:"start"});
+    const names = {daara:"المحاظر",school:"المدارس القرآنية",teacher:"المعلمون والخدمات",support:"دعم المحاظر"};
+    const frenchNames = {daara:"Daaras",school:"Écoles coraniques",teacher:"Enseignants et services",support:"Soutenir un daara"};
+    showAppMessage(language === "fr" ? frenchNames[button.dataset.category] + " : cette rubrique sera activée après connexion des données." : "اخترت قسم " + names[button.dataset.category] + ". سيتم تفعيله عند ربط البيانات.");
   });
 });
 function showComingSoon() {
-  $("#notice").textContent = language === "fr" ? "Cette fonctionnalité sera disponible dans une prochaine version de SenDaara." : "ستتوفر هذه الميزة في إصدار قادم من SenDaara.";
-  $("#results").scrollIntoView({behavior:"smooth",block:"start"});
+  showAppMessage(language === "fr" ? "Cette fonctionnalité sera disponible dans une prochaine version." : "ستتوفر هذه الميزة في مرحلة قادمة من التطبيق.");
 }
-$("#notifyButton").addEventListener("click", showComingSoon);
-$("#joinButton").addEventListener("click", showComingSoon);
-$("#navProfile").addEventListener("click", showComingSoon);
-$("#profileTop").addEventListener("click", showComingSoon);
+$("#notifyButton")?.addEventListener("click", showComingSoon);
+$("#notifyTop")?.addEventListener("click", showComingSoon);
+$("#joinButton")?.addEventListener("click", showComingSoon);
+$("#navProfile")?.addEventListener("click", showComingSoon);
+$("#profileTop")?.addEventListener("click", showComingSoon);
+$("#navDiscover")?.addEventListener("click", () => $("#searchInput")?.focus());
+$("#navJobs")?.addEventListener("click", showComingSoon);
+$("#navNotifications")?.addEventListener("click", showComingSoon);
+document.querySelectorAll("[data-show-all]").forEach((link) => link.addEventListener("click", (event) => {
+  event.preventDefault();
+  showAppMessage(language === "fr" ? "Le répertoire complet sera disponible après connexion de la base de données." : "سيظهر الدليل الكامل بعد ربط قاعدة البيانات.");
+}));
