@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#126b4f">
+  <meta name="theme-color" content="#102019">
   <meta name="description" content="SenDaara — trouvez des écoles coraniques et des daaras au Sénégal.">
-  <title>SenDaara — Les daaras du Sénégal</title>
+  <title>سونو دارا | SenDaara</title>
   <link rel="icon" type="image/svg+xml" href="assets/sendaara-mark.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
@@ -16,68 +16,75 @@
 </head>
 <body>
   <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="SenDaara accueil">
+    <header class="topbar mobile-topbar" dir="rtl">
+      <a class="brand" href="#" aria-label="سونو دارا">
         <img src="assets/sendaara-mark.svg" alt="" class="brand-mark">
-        <span class="brand-copy"><strong>Sen<span>Daara</span></strong><small>Le savoir, nos racines.</small></span>
+        <span class="brand-copy"><strong>سونو دارا</strong><small>SenDaara · العلم للجميع</small></span>
       </a>
       <div class="top-actions">
-        <button class="language-button" id="languageToggle" type="button" aria-label="Changer la langue">عربي</button>
-        <button class="profile-button" id="profileTop" type="button" aria-label="Profil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"/></svg></button>
+        <button class="language-button" id="languageToggle" type="button" aria-label="Changer la langue">FR</button>
+        <button class="profile-button" id="profileTop" type="button" aria-label="الملف الشخصي"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"/></svg></button>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-pattern" aria-hidden="true"></div>
-        <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">AU CŒUR DU SÉNÉGAL</span></div>
-          <h1 data-i18n="heroTitle">Le savoir commence<br><em>au Daara.</em></h1>
-          <p data-i18n="heroText">Découvrez les daaras et écoles coraniques près de chez vous. Le lien entre les familles, les enseignants et le savoir.</p>
-          <a class="hero-link" href="#search"><span data-i18n="explore">Explorer les daaras</span><span aria-hidden="true">↘</span></a>
+    <main class="mobile-home" dir="rtl">
+      <section class="app-welcome">
+        <div class="welcome-copy"><span class="welcome-kicker">مرحبًا بك في</span><h1>سونو دارا <span>🌿</span></h1><p>دليلك لاكتشاف المحاظر والمعلمين في السنغال</p></div>
+        <div class="welcome-logo"><img src="assets/sendaara-mark.svg" alt="شعار سونو دارا"></div>
+        <button class="notification-button" type="button" id="notifyTop" aria-label="الإشعارات"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i></i></button>
+      </section>
+      <form class="mobile-search" id="searchForm">
+        <button class="search-submit" type="submit"><span data-i18n="searchButton">بحث</span></button>
+        <input id="searchInput" type="search" placeholder="ابحث عن دار أو معلم أو مدينة" data-i18n-placeholder="searchPlaceholder" aria-label="ابحث عن دار أو معلم أو مدينة">
+        <span class="mobile-search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></span>
+      </form>
+      <div class="mobile-shortcuts" aria-label="الأقسام الرئيسية">
+        <button class="shortcut" type="button" data-category="daara"><span class="shortcut-icon shortcut-green"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></span><strong>إدارة الدار</strong></button>
+        <button class="shortcut" type="button" data-category="teacher"><span class="shortcut-icon shortcut-blue"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></svg></span><strong>الوظائف<br>والخدمات</strong></button>
+        <button class="shortcut" type="button" data-category="teacher"><span class="shortcut-icon shortcut-orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><strong>المعلمون</strong></button>
+        <button class="shortcut" type="button" data-category="school"><span class="shortcut-icon shortcut-purple"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></span><strong>اكتشف</strong></button>
+      </div>
+
+      <section class="showcase-section" id="results">
+        <div class="showcase-heading"><a href="#search" class="show-all" data-show-all="daaras">عرض الكل</a><div><h2>دارات مميزة</h2><p>اكتشف محاظر قريبة منك</p></div></div>
+        <div class="horizontal-cards">
+          <article class="place-card">
+            <div class="place-art art-sunrise" aria-hidden="true"><span class="art-sun"></span><span class="art-mosque"><i></i><b></b><em></em></span><span class="art-tree"><i></i><b></b></span></div>
+            <div class="place-info"><div><h3>دار الإيمان</h3><p>تياس · 85 تلميذًا</p></div><span class="place-rating">★ 4.8</span></div>
+            <div class="place-tags"><span>تحفيظ القرآن</span><span>نموذج تجريبي</span></div>
+          </article>
+          <article class="place-card">
+            <div class="place-art art-peach" aria-hidden="true"><span class="art-sun"></span><span class="art-mosque"><i></i><b></b><em></em></span><span class="art-tree"><i></i><b></b></span></div>
+            <div class="place-info"><div><h3>دار النور</h3><p>تياس · 120 تلميذًا</p></div><span class="place-rating">★ 4.6</span></div>
+            <div class="place-tags"><span>تحفيظ القرآن</span><span>نموذج تجريبي</span></div>
+          </article>
+          <article class="place-card">
+            <div class="place-art art-blue" aria-hidden="true"><span class="art-sun"></span><span class="art-mosque"><i></i><b></b><em></em></span><span class="art-tree"><i></i><b></b></span></div>
+            <div class="place-info"><div><h3>دار السلام</h3><p>داكار · 60 تلميذًا</p></div><span class="place-rating">★ 4.7</span></div>
+            <div class="place-tags"><span>تعليم القرآن</span><span>نموذج تجريبي</span></div>
+          </article>
         </div>
-        <div class="hero-seal" aria-hidden="true">
-          <div class="seal-inner"><span class="seal-star">✳</span><span class="seal-arabic">اقرأ</span><span class="seal-line"></span><span class="seal-caption">SAVOIR · FOI · AVENIR</span></div>
-        </div>
-        <div class="hero-bottom"><span>14 RÉGIONS</span><span class="hero-bottom-line"></span><span>UN HÉRITAGE VIVANT</span></div>
       </section>
 
-      <section class="search-section" id="search">
-        <div class="section-heading">
-          <div><span class="section-kicker" data-i18n="findKicker">VOTRE RECHERCHE</span><h2 data-i18n="findTitle">Trouver un daara</h2></div>
-          <span class="heading-icon" aria-hidden="true">⌕</span>
-        </div>
-        <form class="search-card" id="searchForm">
-          <label class="search-field"><span class="field-icon" aria-hidden="true">⌕</span><span class="field-body"><span data-i18n="searchLabel">Nom du daara ou enseignant</span><input id="searchInput" type="search" placeholder="Ex. Daara Serigne..." data-i18n-placeholder="searchPlaceholder"></span></label>
-          <label class="search-field"><span class="field-icon pin" aria-hidden="true">⌖</span><span class="field-body"><span data-i18n="regionLabel">Région</span><select id="regionSelect"><option value="" data-i18n="allRegions">Toutes les régions</option><option>Dakar</option><option>Thiès</option><option>Diourbel</option><option>Saint-Louis</option><option>Kaolack</option><option>Louga</option><option>Ziguinchor</option><option>Fatick</option><option>Kolda</option><option>Tambacounda</option><option>Kaffrine</option><option>Matam</option><option>Sédhiou</option><option>Kédougou</option></select></span><span class="select-chevron">⌄</span></label>
-          <button class="search-submit" type="submit"><span data-i18n="searchButton">Rechercher</span><span aria-hidden="true">→</span></button>
-        </form>
-        <div class="quick-tags"><span data-i18n="popular">Populaire :</span><button type="button" data-query="Dakar">Dakar</button><button type="button" data-query="Thiès">Thiès</button><button type="button" data-query="École coranique">Écoles coraniques</button></div>
-      </section>
-
-      <section class="categories-section">
-        <div class="section-heading compact"><div><span class="section-kicker" data-i18n="discoverKicker">DÉCOUVRIR</span><h2 data-i18n="discoverTitle">Explorez par besoin</h2></div></div>
-        <div class="category-grid">
-          <button class="category-card" type="button" data-category="daara"><span class="category-icon green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.8l8.5 6.7"/><path d="M5.5 9.5v10h13v-10M9.5 19.5v-6h5v6"/></svg></span><span class="category-title" data-i18n="cat1">Daaras</span><span class="category-desc" data-i18n="cat1desc">Apprentissage du Coran</span><span class="category-arrow">↗</span></button>
-          <button class="category-card" type="button" data-category="school"><span class="category-icon sand" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5V20"/><path d="M8 8h2m4 0h2M8 12h2m4 0h2M8 16h2m4 0h2M2.5 20h19"/></svg></span><span class="category-title" data-i18n="cat2">Écoles coraniques</span><span class="category-desc" data-i18n="cat2desc">Établissements & madrasas</span><span class="category-arrow">↗</span></button>
-          <button class="category-card" type="button" data-category="teacher"><span class="category-icon blue" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M4.5 20c.6-4.1 3.1-6.2 7.5-6.2s6.9 2.1 7.5 6.2"/></svg></span><span class="category-title" data-i18n="cat3">Enseignants</span><span class="category-desc" data-i18n="cat3desc">Trouver un enseignant</span><span class="category-arrow">↗</span></button>
-          <button class="category-card" type="button" data-category="support"><span class="category-icon gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.8 8.8c0 5-8.8 10.2-8.8 10.2S3.2 13.8 3.2 8.8a4.3 4.3 0 0 1 8.8-1 4.3 4.3 0 0 1 8.8 1Z"/></svg></span><span class="category-title" data-i18n="cat4">Soutenir un daara</span><span class="category-desc" data-i18n="cat4desc">Contribuer à sa mission</span><span class="category-arrow">↗</span></button>
+      <section class="showcase-section teacher-showcase">
+        <div class="showcase-heading"><a href="#search" class="show-all" data-show-all="teachers">عرض الكل</a><div><h2>معلمون مميزون</h2><p>تعرّف على أهل العلم</p></div></div>
+        <div class="horizontal-cards">
+          <article class="place-card teacher-card"><div class="teacher-art teacher-mint"><span class="avatar-face"><i class="avatar-cap"></i><b></b><em></em></span></div><div class="place-info"><div><h3>أحمد سيدي</h3><p>داكار · 28 تلميذًا</p></div><span class="place-rating">★ 4.9</span></div><div class="place-tags"><span>تجويد القرآن</span><span>نموذج تجريبي</span></div></article>
+          <article class="place-card teacher-card"><div class="teacher-art teacher-lavender"><span class="avatar-face"><i class="avatar-cap"></i><b></b><em></em></span></div><div class="place-info"><div><h3>عمر با</h3><p>تياس · 15 تلميذًا</p></div><span class="place-rating">★ 4.7</span></div><div class="place-tags"><span>تعليم القرآن</span><span>نموذج تجريبي</span></div></article>
+          <article class="place-card teacher-card"><div class="teacher-art teacher-sand"><span class="avatar-face"><i class="avatar-cap"></i><b></b><em></em></span></div><div class="place-info"><div><h3>عبد الرحمن</h3><p>كاولاك · 32 تلميذًا</p></div><span class="place-rating">★ 4.8</span></div><div class="place-tags"><span>حفظ القرآن</span><span>نموذج تجريبي</span></div></article>
         </div>
       </section>
 
-      <section class="results-section" id="results">
-        <div class="results-heading"><div><span class="section-kicker" data-i18n="nearKicker">À DÉCOUVRIR</span><h2 data-i18n="nearTitle">Les daaras en vedette</h2></div><span class="soon-badge" data-i18n="previewBadge">APERÇU</span></div>
-        <div class="empty-state"><div class="empty-symbol">✳</div><h3 data-i18n="emptyTitle">Votre communauté commence ici</h3><p data-i18n="emptyText">Les profils des daaras et enseignants apparaîtront ici dès que le répertoire sera connecté. Pour le moment, nous préparons un espace clair et fiable pour tous.</p><button type="button" class="outline-button" id="notifyButton" data-i18n="notifyButton">Être informé du lancement <span>→</span></button><p class="notice" id="notice" role="status" aria-live="polite"></p></div>
-      </section>
-
-      <section class="join-banner"><div class="join-mark" aria-hidden="true">✳</div><div><span class="section-kicker" data-i18n="joinKicker">ENSEMBLE POUR LE SAVOIR</span><h2 data-i18n="joinTitle">Vous représentez un daara ?</h2><p data-i18n="joinText">Préparez-vous à présenter votre établissement aux familles du Sénégal.</p></div><button type="button" id="joinButton" aria-label="En savoir plus">↗</button></section>
+      <section class="support-banner"><span class="support-art">♡</span><div><h2>ساهم في دعم المحاظر</h2><p>يدًا بيد لدعم التعليم القرآني في السنغال.</p></div><button type="button" id="joinButton" aria-label="اعرف المزيد">←</button></section>
+      <p class="demo-disclaimer">هذه البطاقات للمعاينة فقط، والأسماء والتقييمات تجريبية وليست بيانات حقيقية.</p>
     </main>
 
-    <nav class="bottom-nav" aria-label="Navigation principale">
-      <a class="nav-item active" href="#"><span class="nav-icon">⌂</span><span data-i18n="navHome">Accueil</span></a>
-      <a class="nav-item" href="#search"><span class="nav-icon">⌕</span><span data-i18n="navSearch">Recherche</span></a>
-      <a class="nav-item" href="#results"><span class="nav-icon">▤</span><span data-i18n="navDaaras">Les daaras</span></a>
-      <button class="nav-item" type="button" id="navProfile"><span class="nav-icon">♙</span><span data-i18n="navProfile">Profil</span></button>
+    <nav class="bottom-nav mobile-bottom-nav" aria-label="التنقل الرئيسي" dir="rtl">
+      <a class="nav-item active" href="#"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 21v-5h8v5M9 8h6"/></svg></span><span>الرئيسية</span></a>
+      <button class="nav-item" type="button" id="navDiscover"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/></svg></span><span>اكتشف</span></button>
+      <button class="nav-item" type="button" id="navJobs"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></svg></span><span>الوظائف</span></button>
+      <button class="nav-item" type="button" id="navNotifications"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span><span>الإشعارات</span></button>
+      <button class="nav-item" type="button" id="navProfile"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span>حسابي</span></button>
     </nav>
     <footer class="footer"><span>© 2026 SenDaara</span><span data-i18n="footer">Pensé au Sénégal, pour le Sénégal.</span></footer>
   </div>
