@@ -107,3 +107,22 @@ body{background:#0d1511;color:#f4f7f3;font-family:"Noto Sans Arabic","DM Sans",s
 .mobile-bottom-nav{background:rgba(20,35,26,.97);border-top-color:#2b4033}
 .mobile-bottom-nav .nav-item.active{background:linear-gradient(180deg,#1b3b2a,#142b1f);color:#83d5ab}
 @media(max-width:390px){.app-welcome{padding:21px 16px 23px}.shortcut-icon{box-shadow:0 6px 14px #0002}.place-card{flex-basis:225px}}
+
+
+/* Refined home navigation and shortcut cards — SVG-first, phone friendly */
+.mobile-home{padding-bottom:108px}
+.app-welcome{min-height:138px;border-radius:0 0 28px 28px}
+.welcome-copy h1{letter-spacing:0;font-family:"Noto Sans Arabic",sans-serif}
+.welcome-logo{border-radius:20px;background:#fff}
+.mobile-shortcuts{gap:10px;margin-top:2px;margin-bottom:34px}
+.shortcut{padding:10px 5px 12px;border:1px solid #293d30;border-radius:21px;background:linear-gradient(180deg,#17271d,#132019);min-height:132px;justify-content:center;gap:10px}
+.shortcut-icon{width:64px;max-width:64px;aspect-ratio:1;border-radius:20px}
+.shortcut-icon svg{width:32px;height:32px;stroke-width:1.9}
+.shortcut strong{font-size:clamp(10px,2.9vw,13px);min-height:34px;display:flex;align-items:center;justify-content:center}
+.mobile-bottom-nav .nav-item{gap:5px;transition:color .18s,background .18s}
+.mobile-bottom-nav .nav-item:active{background:#1b3b2a}
+.mobile-bottom-nav .nav-icon{width:31px;height:31px}
+.mobile-bottom-nav .nav-icon svg{width:24px;height:24px;stroke-width:1.85}
+.mobile-bottom-nav .nav-item.active .nav-icon{background:#204632;border-radius:12px;width:38px;height:31px}
+.mobile-bottom-nav .nav-item.active span:last-child{font-weight:800}
+@media(max-width:390px){.mobile-shortcuts{gap:7px}.shortcut{min-height:122px;padding-inline:2px;border-radius:18px}.shortcut-icon{width:56px;max-width:56px;border-radius:17px}.shortcut-icon svg{width:29px;height:29px}.mobile-bottom-nav{height:80px}}
