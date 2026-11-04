@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F4D3A">
+<title>سونو دارا · الإدارة</title>
+<link rel="icon" href="logo.jpg">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="nb" class="nb" role="status"></div>
+<main id="app">
+
+<section id="ob" class="scr">
+  <div class="obh"><div class="lgb"><img src="logo.jpg" alt="شعار سونو دارا"></div><h1>سونو دارا</h1><p>تطبيق إدارة المدارس القرآنية</p></div>
+  <div class="obf">
+    <label for="un">اسمك</label><input id="un" autocomplete="name" placeholder="الاسم الكامل">
+    <label for="up">رقم هاتفك</label><input id="up" type="tel" inputmode="tel" autocomplete="tel" placeholder="77 000 00 00">
+    <button class="pb" onclick="doLogin()">دخول</button>
+    <p class="hint">تحصل على 100 نقطة هدية عند أول دخول لتجرّب التطبيق.</p>
+  </div>
+</section>
+
+<section id="hm" class="scr">
+  <div class="top">
+    <div class="inst"><b id="inm"></b><small id="iwho"></small></div>
+    <button class="ib" onclick="go(pgAdmin)" aria-label="الإدارة"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></button>
+  </div>
+  <div class="hero">
+    <div class="hr1">
+      <div class="hb"><small>رصيد الدارة المشترك</small><div class="bn"><span id="bn">0</span><i>نقطة</i><button class="eye" onclick="toggleHide()" aria-label="إخفاء الرصيد"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+      <div class="hc"><div class="qr" id="qr" aria-label="رمز الدارة"></div><b id="icd" dir="ltr"></b><small>رمز الدارة</small></div>
+    </div>
+    <div class="meter"><i id="mt"></i></div>
+    <div class="mrow"><span id="mtx"></span><span id="mu"></span></div>
+    <button class="buy" onclick="openBuy()">+ شراء نقاط</button>
+  </div>
+  <div class="sech"><b>الخدمات الرئيسية</b></div>
+  <div class="grid" id="grid"></div>
+  <div class="lst" id="lst">
+    <div class="sech"><b>أحدث العمليات</b><button class="lnk" onclick="go(pgHist)">عرض الكل</button></div>
+    <div id="act"></div>
+  </div>
+</section>
+
+<section id="sp" class="scr">
+  <header class="bar"><button class="ib" onclick="back()" aria-label="رجوع">›</button><h2 id="pt"></h2><span id="px"></span></header>
+  <div id="pb" class="pbd"></div>
+</section>
+
+</main>
+<div id="ov" class="ov" onclick="closeSheet()"></div>
+<div id="sh" class="sheet"><div class="grab"></div><div id="shb"></div></div>
+<div id="tt" class="tt"></div>
+<script src="app.js"></script>
+</body>
+</html>
